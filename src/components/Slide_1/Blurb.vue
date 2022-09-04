@@ -1,7 +1,9 @@
 
 <template>
 
-<div class="w-screen h-screen snap-center">
+<div class="w-screen h-screen">
+    
+
     <div
     v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { duration: 1000, delay: 1400, type:'keyframes', ease: 'easeInOut' }}"
     id="blub"
@@ -14,9 +16,14 @@
         </div>
     </div>
 </div>
-
-
 </template>
+
+<script setup lang="ts">
+import iconListVue from "@/components/Slide_1/iconList.vue";
+import roundImageVue from "@/components/Slide_1/roundImage.vue";
+
+</script>
+
 <style scoped>
 #blub {
   position: relative;

@@ -1,23 +1,24 @@
 <template>
-  <div id="frontpage" class="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory relative">
-
-    
+  <div id="frontpage" class="h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory relative scroll-smooth">
+    <NavVue></NavVue>
     <div v-motion :initial="{ y: 4400, x: 1500 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}"
-      id="background" class="left-0 w-screen overflow-hidden" >
+    id="background" class="left-0 w-screen overflow-hidden z-0" >
       <roundImageVue id="me" class="" src="https://assets.rewelcabiles.me/portfolio/me.jpeg"></roundImageVue>
       <iconListVue id="links"></iconListVue>
     </div>
-
-    <BlurbVue></BlurbVue>
-    <SlideProjectsVue></SlideProjectsVue>
+    <BlurbVue id="blurb" class="z-100 snap-center"></BlurbVue>
+    <SlideProjectsVue id="projects" class="z-100 snap-center"></SlideProjectsVue>
+    <contactsVue id="contactMe" class="z-100 snap-center"></contactsVue>
   </div>
   
 </template>
 <script setup lang="ts">
+import NavVue from '@/components/Nav/Nav.vue'
 import iconListVue from "@/components/Slide_1/iconList.vue";
 import roundImageVue from "@/components/Slide_1/roundImage.vue";
 import BlurbVue from "@/components/Slide_1/Blurb.vue"
 import SlideProjectsVue from "@/components/Slide_2/SlideProjects.vue"
+import contactsVue from "@/components/Slide_3/contacts.vue";
 </script>
 <style>
 
@@ -48,13 +49,7 @@ body {
   filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1))
 }
 
-#me {
-  position:absolute;
-  height: 11rem;
-  top: calc(100vh / 2);
-  left: calc(100vw / 3.5);
-  transform: translate(-50%, -50%);
-}
+
 
 #links {
   position:absolute;
@@ -62,7 +57,6 @@ body {
   left: calc(100vw / 3.5);
   transform: translate(-50%, -50%);
 }
-
 
 
 #scrollBreak1{
