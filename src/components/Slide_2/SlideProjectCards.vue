@@ -1,10 +1,13 @@
 
 <template>
     <div
-    :class="divClass.concat(selected ? ['scale-200', 'z-50','border-2'] : ['scale-100', 'z-20'])"
+    :class="divClass.concat(selected ? ['scale-125', 'z-50','border-2'] : ['scale-100', 'z-20'])"
     :style="`background-image: url(${data.preview})`"
     @click="$emit('projectCardClicked', data)"
     >
+        <div class="font-bold text-lg bg-zinc-50 text-zinc-800 p-4 opacity-90 border-b-2 border-b-zinc-800">
+            {{data.name}}
+        </div>
     </div>
 
 </template>

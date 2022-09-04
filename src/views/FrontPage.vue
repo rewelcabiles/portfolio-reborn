@@ -51,27 +51,5 @@ body {
 
 
 
-#links {
-  position:absolute;
-  top: calc((100vh / 2) + 6.5rem);
-  left: calc(100vw / 3.5);
-  transform: translate(-50%, -50%);
-}
-
-
-#scrollBreak1{
-  top: 0;
-  height: calc(100vh);
-}
-
-#scrollBreak2{
-  top: 100vh;
-  height: 100vh;
-}
-
-#scrollBreak3{
-  top: 200vh;
-  height: 100vh;
-}
 
 </style>
