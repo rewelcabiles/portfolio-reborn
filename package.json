@@ -13,6 +13,7 @@
     "@heroicons/vue": "^2.0.10",
     "@vueuse/motion": "^2.0.0-beta.12",
     "autoprefixer": "^10.4.8",
+    "firebase": "^9.9.4",
     "pinia": "^2.0.17",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
