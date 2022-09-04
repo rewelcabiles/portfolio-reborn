@@ -1,8 +1,9 @@
 <template>
-<div class="w-screen h-screen  py-20 gap-y-20 flex flex-col">
+
+<div class="w-screen h-screen py-20 gap-y-20 flex flex-col">
     <div class="flex flex-col gap-2 px-40">
         <div class="text-4xl font-bold">
-            My Projects
+            stuff i've worked on
         </div>
         <div class="flex flex-row">
             ...
@@ -57,3 +58,16 @@ const i = [
     }
 ]
 </script>
+<style>
+#background2 {
+  clip-path: polygon(
+    10% 0%,
+    30% 0%,
+    45% 100%,
+    25% 100%
+  );
+  position: absolute;
+  
+  filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1))
+}
+</style>

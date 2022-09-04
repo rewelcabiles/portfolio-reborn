@@ -1,9 +1,13 @@
 
 <template>
 
-<div class="w-screen h-screen">
+<div class="w-screen h-screen bg-zinc-50">
     
-
+    <div v-motion :initial="{ y: 4400, x: 1500 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}"
+    id="background" class="left-0 w-screen overflow-hidden z-0 background_aztec">
+      <roundImageVue id="me" class="" src="https://assets.rewelcabiles.me/portfolio/me.jpeg"></roundImageVue>
+      <iconListVue id="links"></iconListVue>
+    </div>
     <div
     v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { duration: 1000, delay: 1400, type:'keyframes', ease: 'easeInOut' }}"
     id="blub"
@@ -30,6 +34,23 @@ import roundImageVue from "@/components/Slide_1/roundImage.vue";
   top: calc((100vh / 2) - 3rem);
   left: calc((100vw / 2) - 4rem);
 }
+
+
+#background {
+  clip-path: polygon(
+    10% 0%,
+    30% 0%,
+    45% 100%,
+    25% 100%
+  );
+  position: absolute;
+  height: 100%;
+  
+  filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1))
+}
+
+
+
 
 
 </style>
