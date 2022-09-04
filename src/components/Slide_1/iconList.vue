@@ -36,5 +36,19 @@ const links = [
     icon: "fa-solid fa-file text-zinc-50 text-xl",
     title: "Resume",
   },
+  {
+    type: "img",
+    link: "mailto:rewe.cabiles@gmail.com",
+    icon: "fa-solid fa-envelope text-zinc-50 text-xl",
+    title: "Email",
+  },
 ];
 </script>
+<style>
+#links {
+  position:absolute;
+  top: calc((100vh / 2) + 6.5rem);
+  left: calc(100vw / 3.7);
+  transform: translate(-50%, -50%);
+}
+</style>
