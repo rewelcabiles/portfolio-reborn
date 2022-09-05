@@ -14,15 +14,15 @@
             v-for="(value, key, index) in projectStore.data"
             :data="value"
             :selected="key === projectStore.selectedProject"
-            @projectCardClicked="projectStore.setSelected(key as string)"/>
+            @projectCardClicked="nodeClicked(key as string)"/>
         </div>
-        <div class="px-10 xl:w-1/3 pb-20">        
+        <div id="projectDetails" class="px-10 xl:w-1/3 pb-20">        
             <Transition
             enter-active-class="duration-500 ease-out"
             enter-from-class="transform opacity-0"
             enter-to-class="opacity-100"
             >
-                <div id="details" class="text-zinc-800 flex flex-col gap-4" v-if="projectStore.data[projectStore.selectedProject]">
+                <div class="text-zinc-800 flex flex-col gap-4" v-if="projectStore.data[projectStore.selectedProject]">
                     <div class="text-3xl font-bold">
                         {{ projectStore.data[projectStore.selectedProject].name }}
                     </div>
@@ -36,7 +36,6 @@
                             <a :href="'https://'+ projectStore.data[projectStore.selectedProject].homepage" target="_blank">
                                 <i class="fa-sharp fa-solid fa-house mr-1"></i>Homepage
                             </a>
-                            
                         </div>
                     </div>
                     <div id="info_desc" class="text-justify">                
@@ -51,7 +50,7 @@
 <script setup lang="ts">
 import SlideProjectCardsVue from './SlideProjectCards.vue';
 import { useProjectStore } from '@/stores/projects';
-
+import { ref, onMounted } from 'vue'
 const projectStore = useProjectStore();
 
 const i = [
@@ -62,17 +61,18 @@ const i = [
         "description": "hella hi hello"
     }
 ]
+
+function nodeClicked(key: string) {
+    projectStore.setSelected(key as string)
+    setTimeout(() => {
+        var element = document.getElementById('projectDetails')!
+        element.scrollIntoView({ behavior: "smooth" });
+    }, 100)
+    
+
+}
+
 </script>
 <style>
-#background2 {
-  clip-path: polygon(
-    10% 0%,
-    30% 0%,
-    45% 100%,
-    25% 100%
-  );
-  position: absolute;
-  
-  filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1))
-}
+
 </style>
