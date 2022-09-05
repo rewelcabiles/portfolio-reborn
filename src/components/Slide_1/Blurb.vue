@@ -7,11 +7,16 @@
       <roundImageVue id="me" class="" src="https://assets.rewelcabiles.me/portfolio/me.jpeg"></roundImageVue>
       <iconListVue id="links"></iconListVue>
     </div>
+    <div v-motion :initial="{ y: 4400, x: 1500 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}" id="smallBackground"
+      class="background_aztec w-full mx-auto lg:hidden block">
+      
+    </div>
     <div id="blub" v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}"
     class="flex flex-col mx-auto text-center lg:pt-0 lg:pl-96 lg:text-left lg:mt-[45vh] mt-[-25vh]">
         <div class="lg:hidden block w-full mx-auto mb-20">
           <img v-motion :initial="{ y: -2400 }" :enter="{ y: 0, transition: { duration: 3000, delay: 1300, type: 'spring', mass: 0.2 } }" src="https://assets.rewelcabiles.me/portfolio/me.jpeg"
           class="rounded-full border-4 shadow-xl mx-auto w-32 h-32"/>
+          <iconListVue id="linkSmalls" class="mt-4 mx-auto w-fit"></iconListVue>
         </div>
         <div class="md:text-5xl text-2xl text-zinc-900">
             Hi! I'm Rewel Cabiles
@@ -43,6 +48,17 @@ import roundImageVue from "@/components/Slide_1/roundImage.vue";
   filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1))
 }
 
+#smallBackground{
+  clip-path: polygon(
+    0% 20%,
+    0% 45%,
+    100% 50%,
+    100% 25%
+  );
+  position: absolute;
+  height: 100vh;
+  filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1))
+}
 
 
 
