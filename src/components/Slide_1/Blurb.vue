@@ -7,10 +7,11 @@
       <roundImageVue id="me" class="" src="https://assets.rewelcabiles.me/portfolio/me.jpeg"></roundImageVue>
       <iconListVue id="links"></iconListVue>
     </div>
-    <div v-motion :initial="{ y: 4400, x: 1500 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}" id="smallBackground"
-      class="background_aztec w-full mx-auto lg:hidden block">
-      
-    </div>
+    
+    <div v-motion :initial="{ y: 500, x: 4400 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 200, type:'keyframes', ease: 'easeInOut' }}"
+    id="smallBackground"
+    class="background_aztec w-full mx-auto lg:hidden block"/>
+    
     <div id="blub" v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}"
     class="flex flex-col mx-auto text-center lg:pt-0 lg:pl-96 lg:text-left lg:mt-[45vh] mt-[-25vh]">
         <div class="lg:hidden block w-full mx-auto mb-20">
