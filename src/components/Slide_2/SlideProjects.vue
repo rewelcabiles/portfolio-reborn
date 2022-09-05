@@ -2,8 +2,8 @@
 
 <div class="w-screen h-screen py-40 gap-y-20 flex flex-col">
     <div class="flex flex-col gap-2 lg:px-40">
-        <div v-motion :initial="{ x: 400, opacity: 0 }" :visible="{ x: 0,  opacity: 1, transition: { duration: 250, delay: 100, type:'spring', mass: 0.2  }}"
-        class="text-4xl font-bold text-zinc-900 mx-auto">
+        <div v-motion :initial="{ y: -100, opacity: 0 }" :enter="{ y: 0,  opacity: 1, transition: { duration: 250, delay: 100, type:'spring', mass: 0.2  }}"
+        class="md:text-4xl text-3xl font-bold text-zinc-900 mx-auto">
             My personal Projects
         </div>
     </div>
