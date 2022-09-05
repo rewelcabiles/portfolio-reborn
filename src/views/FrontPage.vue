@@ -4,14 +4,13 @@
     <BlurbVue id="blurb" class="z-0 fixed snap-center"></BlurbVue>
     <aboutMe id="aboutMe" class="snap-center z-50"></aboutMe>
     <SlideProjectsVue id="projects"></SlideProjectsVue>
-    
+    <footerVue></footerVue>
   </div>
   
 </template>
 <script setup lang="ts">
 import NavVue from '@/components/Nav/Nav.vue'
-import iconListVue from "@/components/Slide_1/iconList.vue";
-import roundImageVue from "@/components/Slide_1/roundImage.vue";
+import footerVue from '@/components/Footer/footer.vue';
 import BlurbVue from "@/components/Slide_1/Blurb.vue"
 import SlideProjectsVue from "@/components/Slide_2/SlideProjects.vue"
 import aboutMe from "@/components/Slide_3/about.vue";

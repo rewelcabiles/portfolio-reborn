@@ -1,7 +1,7 @@
 
 <template>
 
-<div class="h-screen bg-zinc-50 relative flex flex-col">
+<div class="min-h-screen bg-zinc-50 relative flex flex-col">
     <div v-motion :initial="{ y: 4400, x: 1500 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}" id="background"
     class="background_aztec w-full mx-auto lg:block hidden">
       <roundImageVue id="me" class="" src="https://assets.rewelcabiles.me/portfolio/me.jpeg"></roundImageVue>
@@ -10,7 +10,7 @@
     
     <div v-motion :initial="{ y: 500, x: 4400 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 200, type:'keyframes', ease: 'easeInOut' }}"
     id="smallBackground"
-    class="background_aztec w-full mx-auto lg:hidden block"/>
+    class="background_aztec w-full mx-auto sm:hidden block"/>
     
     <div id="blub" v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}"
     class="flex flex-col mx-auto text-center lg:pt-0 lg:pl-96 lg:text-left lg:mt-[45vh] mt-[-25vh]">
@@ -22,7 +22,7 @@
         <div class="md:text-5xl text-2xl text-zinc-900">
             Hi! I'm Rewel Cabiles
         </div>
-        <div class="md:ml-5 mt-6 text-lg text-zinc-900 lg:px-0 px-10">
+        <div class="md:ml-5 mt-6 text-lg text-zinc-900 lg:px-0 px-10 pb-10">
             I’m a software & web developer based in Hong Kong / Philippines
         </div>
     </div>
@@ -39,8 +39,8 @@ import roundImageVue from "@/components/Slide_1/roundImage.vue";
 
 #background {
   clip-path: polygon(
-    10% 0%,
-    30% 0%,
+    12% 0%,
+    32% 0%,
     45% 100%,
     25% 100%
   );
