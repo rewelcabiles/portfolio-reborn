@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-2 px-40">
         <div
         v-motion :initial="{ x: 400, opacity: 0 }" :visible="{ x: 0,  opacity: 1, transition: { duration: 250, delay: 100, type:'spring', mass: 0.2  }}"
-        class="text-4xl font-bold">
+        class="text-4xl font-bold text-zinc-900">
             My personal Projects
         </div>
     </div>
