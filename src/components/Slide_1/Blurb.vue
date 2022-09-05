@@ -1,10 +1,11 @@
 
 <template>
 
-<div class="w-screen h-screen bg-zinc-50">
+<div class="h-screen bg-zinc-50 relative ">
     
-    <div v-motion :initial="{ y: 4400, x: 1500 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}"
-    id="background" class="left-0 w-screen overflow-hidden z-0 background_aztec">
+    <div
+    v-motion :initial="{ y: 4400, x: 1500 }" :enter="{ y: 0, x:0, opacity: 1, transition: { duration: 1000, delay: 400, type:'keyframes', ease: 'easeInOut' }}"
+    id="background" class="background_aztec w-full mx-auto">
       <roundImageVue id="me" class="" src="https://assets.rewelcabiles.me/portfolio/me.jpeg"></roundImageVue>
       <iconListVue id="links"></iconListVue>
     </div>
@@ -30,9 +31,9 @@ import roundImageVue from "@/components/Slide_1/roundImage.vue";
 
 <style scoped>
 #blub {
-  position: relative;
-  top: calc((100vh / 2) - 3rem);
-  left: calc((100vw / 2) - 4rem);
+  
+  padding-top: calc((100vh / 2) - 3rem);
+  padding-left: calc((100vw / 2) - 4rem);
 }
 
 
@@ -44,8 +45,7 @@ import roundImageVue from "@/components/Slide_1/roundImage.vue";
     25% 100%
   );
   position: absolute;
-  height: 100%;
-  
+  height: 100vh;
   filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.1))
 }
 

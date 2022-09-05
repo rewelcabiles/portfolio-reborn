@@ -1,5 +1,5 @@
 <template>
-    <div v-motion :initial="{ x: 5400 }" :enter="{ x: 0, transition: { duration: 2000, delay: 1200, type: 'spring', mass: 0.6 }, }">
+    <div v-motion :initial="{ x: 5400 }" :enter="{ x: 0, transition: { duration: 2000, delay: 1200, type: 'spring', mass: 0.2 }, }">
         <img :src="src" class="rounded-full border-4 shadow-xl w-44 h-44"/>
     </div>
 </template>
