@@ -1,8 +1,8 @@
 <template>
     <div class="min-h-screen from-zinc-900 to-zinc-800 bg-gradient-to-tr pt-40 z-50">
-        <div class="py-10 flex flex-col  px-20">
-            <div class="flex md:flex-row flex-col mx-auto gap-44 lg:px-20">
-                <div class="text-zinc-50 lg:px-10">
+        <div class="py-10 flex flex-col lg:px-20 px-5">
+            <div class="flex xl:flex-row flex-col mx-auto gap-10  xl:gap-44 xl:px-20">
+                <div class="text-zinc-50 md:px-10 w-full">
                     <div
                     v-motion :initial="{ opacity: 0 }" :visible="{ opacity: 1, transition: { duration: 500, delay: 50}}"
                     class="mx-auto text-4xl z-50  mb-10">
@@ -24,7 +24,7 @@
                         
                     </div>
                 </div>
-                <div class="text-zinc-50 w-full lg:px-10">
+                <div class="text-zinc-50 w-full md:px-10">
                     <div
                     v-motion :initial="{ opacity: 0 }" :visible="{ opacity: 1, transition: { duration: 500, delay: 500}}"
                     class="mx-auto text-4xl z-50 mb-10">

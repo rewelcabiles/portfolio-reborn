@@ -1,25 +1,22 @@
 <template>
 
-<div class="w-screen h-screen py-20 gap-y-20 flex flex-col">
-    <div class="flex flex-col gap-2 px-40">
-        <div
-        v-motion :initial="{ x: 400, opacity: 0 }" :visible="{ x: 0,  opacity: 1, transition: { duration: 250, delay: 100, type:'spring', mass: 0.2  }}"
-        class="text-4xl font-bold text-zinc-900">
+<div class="w-screen h-screen py-40 gap-y-20 flex flex-col">
+    <div class="flex flex-col gap-2 lg:px-40">
+        <div v-motion :initial="{ x: 400, opacity: 0 }" :visible="{ x: 0,  opacity: 1, transition: { duration: 250, delay: 100, type:'spring', mass: 0.2  }}"
+        class="text-4xl font-bold text-zinc-900 mx-auto">
             My personal Projects
         </div>
     </div>
-    <div class="flex flex-row gap-20 z-50 p-10 w-full h-2/3 px-40">
-        <div
-        v-motion :initial="{ opacity: 0 }" :visible="{ opacity: 1, transition: { duration: 250, delay: 100 }}"
-        class="h-fit w-2/3 grid lg:grid-cols-3  grid-cols-2 lg:gap-10  py-10  z-50 ">
+    <div class="flex xl:flex-row flex-col gap-20 z-50 lg:px-40">
+        <div v-motion :initial="{ opacity: 0 }" :visible="{ opacity: 1, transition: { duration: 250, delay: 100 }}"
+        class="flex md:flex-row flex-wrap lg:gap-20 gap-10 auto-rows-max py-10 z-50 xl:w-2/3 w-full">
             <SlideProjectCardsVue
             v-for="(value, key, index) in projectStore.data"
-            
             :data="value"
             :selected="key === projectStore.selectedProject"
             @projectCardClicked="projectStore.setSelected(key as string)"/>
         </div>
-        <div class="px-10 w-1/3">        
+        <div class="px-10 xl:w-1/3 pb-20">        
             <Transition
             enter-active-class="duration-500 ease-out"
             enter-from-class="transform opacity-0"
