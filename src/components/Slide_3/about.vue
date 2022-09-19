@@ -67,10 +67,10 @@ const experiences = [
         description: 'I was here as an Intern, working as a backend web developer in the R&D department. I built APIs for the projects we worked on there, occasionally helping with infrustructure related tasks like fixing or setting up servers hosted either on-site or in Azure. I learned how to collaborate in a team environment and shared my ideas on how we could improve some of the projects there.'
     },
     {
-        name: 'Raykan Solutions',
+        name: 'Raykan',
         position: 'Front end developer',
         link: '#',
-        description: "This is a startup company im working with to help build websites and systems for clients. I'm currently working here as a front end developer, using my favourite web framework Vue to recreate an existing site for one of our clients to be more responsive and performant. "
+        description: "This is a startup company im working with to help build websites and systems for clients. I'm currently working here as a front end developer, using my favourite web framework Vue."
     }
 ]
 
