@@ -12,4 +12,5 @@ jobs:
   move:
     runs-on: self-hosted
     steps:
+    - uses: actions/checkout@v2
     - run: cp dist/* /var/www/portfolio4/ -r
