@@ -9,11 +9,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
-
+  move:
     runs-on: self-hosted
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Move build files
     - run: cp dist/* /var/www/portfolio4/ -r
