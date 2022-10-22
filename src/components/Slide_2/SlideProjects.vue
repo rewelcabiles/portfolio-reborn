@@ -12,6 +12,7 @@
         class="flex md:flex-row flex-wrap lg:gap-20 gap-10 auto-rows-max py-10 z-50 xl:w-2/3 w-full">
             <SlideProjectCardsVue
             v-for="(value, key, index) in projectStore.data"
+            :key="index"
             :data="value"
             :selected="key === projectStore.selectedProject"
             @projectCardClicked="nodeClicked(key as string)"/>
@@ -51,6 +52,7 @@
 import SlideProjectCardsVue from './SlideProjectCards.vue';
 import { useProjectStore } from '@/stores/projects';
 import { ref, onMounted } from 'vue'
+
 const projectStore = useProjectStore();
 
 const i = [

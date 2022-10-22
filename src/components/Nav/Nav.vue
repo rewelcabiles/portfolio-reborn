@@ -1,6 +1,6 @@
 
 <template>
-    <div class="fixed w-full flex flex-row bg-zinc-50 ">
+    <div class="fixed w-full flex flex-row bg-zinc-50 z-50">
         <div class="mx-auto lg:ml-auto flex flex-row gap-10 text-zinc-500 p-5">
             <a v-for="(link, index) in navLinks" :key="index"
             v-motion :initial="{ opacity: 0 }" :enter="{  opacity: 1, transition: { duration: 300, delay: 200 * (index), type:'keyframes', ease: 'easeInOut' }}"
