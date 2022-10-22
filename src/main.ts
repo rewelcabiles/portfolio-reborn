@@ -8,6 +8,7 @@ import router from "./router";
 import "./assets/index.css";
 import "./assets/main.css";
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_apiKey,
@@ -20,8 +21,9 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_measurementId
 };
 
-initializeApp(firebaseConfig);
-
+// Initialize Firebase
+const fb = initializeApp(firebaseConfig);
+const analytics = getAnalytics(fb);
 
 const app = createApp(App);
 app.config.globalProperties.$cdn = "https://assets.rewelcabiles.me";
