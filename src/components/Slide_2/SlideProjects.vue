@@ -12,38 +12,38 @@
     </div>
     <div class="flex xl:flex-row flex-col gap-20 z-50 lg:px-40">
         <div v-motion :initial="{ opacity: 0 }" :visible="{ opacity: 1, transition: { duration: 250, delay: 100 }}"
-        class="flex md:flex-row flex-wrap lg:gap-20 gap-10 auto-rows-max py-10 z-50 xl:w-2/3 w-full px-10">
+        class="flex md:flex-row flex-wrap lg:gap-10 gap-10 auto-rows-max py-10 z-50 xl:w-2/3 w-full px-10">
             <SlideProjectCardsVue
-            v-for="(value, key, index) in projectStore.data"
+            v-for="(value, index) in projectStore.data"
             :key="index"
             :data="value"
-            :selected="key === projectStore.selectedProject"
-            @projectCardClicked="nodeClicked(key as string)"/>
+            :selected="value.name === projectStore.selectedProject"
+            @projectCardClicked="nodeClicked(value as string)"/>
         </div>
-        <div id="projectDetails" class="py-28 px-10 xl:w-1/3 pb-20">        
+        <div id="projectDetails" class="py-20 px-10 xl:w-1/3 pb-20">        
             <Transition
             enter-active-class="duration-500 ease-out"
             enter-from-class="transform opacity-0"
             enter-to-class="opacity-100"
             >
-                <div class="text-zinc-800 flex flex-col gap-4" v-if="projectStore.data[projectStore.selectedProject]">
+                <div class="text-zinc-800 flex flex-col gap-4" v-if="projectStore.selectedProject">
                     <div class="text-3xl font-bold">
-                        {{ projectStore.data[projectStore.selectedProject].name }}
+                        {{ projectStore.selectedProject.name }}
                     </div>
                     <div id="icons" class="flex flex-row gap-5">
-                        <div v-if="projectStore.data[projectStore.selectedProject].github" class="align-center">
-                            <a :href="projectStore.data[projectStore.selectedProject].github" target="_blank">
+                        <div v-if="projectStore.selectedProject.github" class="align-center">
+                            <a :href="projectStore.selectedProject.github" target="_blank">
                                 <i class="fa-brands fa-github mr-1"></i>Github
                             </a>
                         </div>
-                        <div v-if="projectStore.data[projectStore.selectedProject].homepage" class="align-center">
-                            <a :href="'https://'+ projectStore.data[projectStore.selectedProject].homepage" target="_blank">
+                        <div v-if="projectStore.selectedProject.homepage" class="align-center">
+                            <a :href="'https://'+ projectStore.selectedProject.homepage" target="_blank">
                                 <i class="fa-sharp fa-solid fa-house mr-1"></i>Homepage
                             </a>
                         </div>
                     </div>
                     <div id="info_desc" class="text-justify">                
-                        {{ projectStore.data[projectStore.selectedProject].description }}
+                        {{ projectStore.selectedProject.description }}
                     </div>
                 </div>
             </Transition>
