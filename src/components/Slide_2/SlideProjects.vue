@@ -1,15 +1,18 @@
 <template>
 
-<div class="w-screen h-screen py-40 gap-y-20 flex flex-col">
+<div class="w-screen min-h-screen py-40 gap-y-20 flex flex-col">
     <div class="flex flex-col gap-2 lg:px-40">
         <div v-motion :initial="{ y: -100, opacity: 0 }" :enter="{ y: 0,  opacity: 1, transition: { duration: 250, delay: 100, type:'spring', mass: 0.2  }}"
         class="md:text-4xl text-3xl font-bold text-zinc-900 mx-auto">
             My personal Projects
         </div>
+        <div class="mx-auto font-light">
+            Click on a card for more information.
+        </div>
     </div>
     <div class="flex xl:flex-row flex-col gap-20 z-50 lg:px-40">
         <div v-motion :initial="{ opacity: 0 }" :visible="{ opacity: 1, transition: { duration: 250, delay: 100 }}"
-        class="flex md:flex-row flex-wrap lg:gap-20 gap-10 auto-rows-max py-10 z-50 xl:w-2/3 w-full">
+        class="flex md:flex-row flex-wrap lg:gap-20 gap-10 auto-rows-max py-10 z-50 xl:w-2/3 w-full px-10">
             <SlideProjectCardsVue
             v-for="(value, key, index) in projectStore.data"
             :key="index"
