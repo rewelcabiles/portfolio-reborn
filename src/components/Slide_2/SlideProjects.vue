@@ -10,9 +10,9 @@
             Click on a card for more information.
         </div>
     </div>
-    <div class="flex xl:flex-row flex-col gap-20 z-50 lg:px-40">
+    <div class="flex xl:flex-row flex-col  z-50 lg:px-40">
         <div v-motion :initial="{ opacity: 0 }" :visible="{ opacity: 1, transition: { duration: 250, delay: 100 }}"
-        class="flex md:flex-row flex-wrap lg:gap-10 gap-10 auto-rows-max py-10 z-50 xl:w-2/3 w-full px-10">
+        class="flex flex-wrap flex-row content-start gap-10 px-10 lg:px-0 py-10 lg:py-0 z-50 xl:w-2/3 w-full">
             <SlideProjectCardsVue
             v-for="(value, index) in projectStore.data"
             :key="index"
@@ -20,7 +20,7 @@
             :selected="value.name === projectStore.selectedProject"
             @projectCardClicked="nodeClicked(value as string)"/>
         </div>
-        <div id="projectDetails" class="py-20 px-10 xl:w-1/3 pb-20">        
+        <div id="projectDetails" class="py-16 px-10 xl:w-1/3 pb-20">        
             <Transition
             enter-active-class="duration-500 ease-out"
             enter-from-class="transform opacity-0"
