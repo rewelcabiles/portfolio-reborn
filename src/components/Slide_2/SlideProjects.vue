@@ -20,7 +20,7 @@
             :selected="key === projectStore.selectedProject"
             @projectCardClicked="nodeClicked(key as string)"/>
         </div>
-        <div id="projectDetails" class="px-10 xl:w-1/3 pb-20">        
+        <div id="projectDetails" class="py-28 px-10 xl:w-1/3 pb-20">        
             <Transition
             enter-active-class="duration-500 ease-out"
             enter-from-class="transform opacity-0"
