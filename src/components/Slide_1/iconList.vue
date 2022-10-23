@@ -39,7 +39,7 @@ const links = [
   },
   {
     type: "img",
-    link: "mailto:rewe.cabiles@gmail.com",
+    link: "mailto:rewel.cabiles@gmail.com",
     icon: "fa-solid fa-envelope text-zinc-50 text-xl hover:scale-125 text-zinc-800 transition-all duration-50",
     title: "Email",
   },
