@@ -94,7 +94,7 @@ const experiences = [
   {
     name: "Raykan",
     position: "Front end developer",
-    link: "https://raykan.co/",
+    link: "#",
     description:
       "This is a startup company im working with to help build websites and systems for clients. I'm currently working here as a front end developer, using my favourite web framework Vue.",
   },
