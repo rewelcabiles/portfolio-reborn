@@ -26,4 +26,4 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - run: cp build/* /var/www/rewelcabiles/ -r
+      - run: cp dist/* /var/www/rewelcabiles/ -r
