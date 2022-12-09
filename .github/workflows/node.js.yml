@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: echo "${{secrets.ENV_1 }}" > .env
       - run: npm ci
       - run: npm run build
       - run: cp dist/* /var/www/rewelcabiles/ -r
