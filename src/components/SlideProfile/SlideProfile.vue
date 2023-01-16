@@ -1,7 +1,7 @@
 <template>
   <div class="w-screen h-screen">
     <div
-      class="px-auto py-44"
+      class="px-auto lg:py-44 py-10"
       v-motion
       :initial="{ opacity: 0 }"
       :enter="{
@@ -27,7 +27,7 @@
               mass: 0.2,
             },
           }"
-          src="https://assets.rewelcabiles.me/portfolio/me.jpeg"
+          src="@/assets/images/me.jpeg"
           class="rounded-full border-4 border-zinc-900 shadow-xl mx-auto h-40 h-40"
         />
         <iconListVue id="linkSmalls" class="mt-4 mx-auto w-fit"></iconListVue>
