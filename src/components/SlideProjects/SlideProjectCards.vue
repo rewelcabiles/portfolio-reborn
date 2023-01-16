@@ -12,10 +12,10 @@ import { ref } from 'vue';
 
 
 const divClass = ref([
-    "md:h-40", "lg:w-64", "w-full", "md:32", "lg:h-64",
+    "md:h-40", "lg:w-64", "w-full", "md:32", "lg:h-54",
     "hover:border-4", "border-zinc-900", "aspect-video",
     "transition-all", "duration-50",
-    "rounded-md",  "bg-cover", "bg-center", "cursor-pointer","shadow-md"
+    "rounded-md",  "bg-cover", "bg-center  bg-no-repeat bg-center bg-zinc-100", "cursor-pointer","shadow-md"
 ])
 
 const props = defineProps({
