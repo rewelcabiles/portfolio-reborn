@@ -6,4 +6,25 @@ import { RouterView } from "vue-router";
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-zinc-50;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply rounded-lg;
+  @apply bg-zinc-500;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-600;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-row bg-zinc-50">
+  <div class="w-full flex flex-row bg-zinc-800">
     <div class="mx-auto lg:ml-auto flex flex-row gap-10 text-zinc-600 p-5">
       <a
         v-for="(link, index) in navLinks"
@@ -16,9 +16,9 @@
           },
         }"
         @click="gotoLink(link.link)"
-        class="hover:text-zinc-900 cursor-pointer transition-all duration-200"
+        class="hover:text-zinc-50  text-zinc-400 cursor-pointer transition-all duration-200 justify-center"
       >
-        {{ link.label }}
+        <i class="fa-regular fa-circle hover:scale-110 transition-all" :id="`${link.link}Nav`" />
       </a>
     </div>
   </div>
@@ -39,6 +39,10 @@ const navLinks = [
     link: "#blurb",
   },
   {
+    label: "What can I do?",
+    link: "#skills",
+  },
+  {
     label: "About",
     link: "#aboutMe",
   },
@@ -47,5 +51,8 @@ const navLinks = [
     link: "#projects",
   },
 ];
+
+
+
 </script>
 <style></style>

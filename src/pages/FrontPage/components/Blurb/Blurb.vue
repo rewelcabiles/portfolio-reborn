@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import iconListVue from "@/pages/FrontPage/components/Blurb/iconList.vue";
+</script>
 <template>
   <div class="w-screen h-screen">
     <div
-      class="px-auto lg:py-44 py-10"
+      class="px-auto lg:py-44 py-32"
       v-motion
       :initial="{ opacity: 0 }"
       :enter="{
@@ -44,8 +47,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import iconListVue from "@/components/SlideProfile/iconList.vue";
-</script>
+
 
 <style></style>

@@ -1,6 +1,6 @@
 
 <template>
-    <div :class="divClass.concat(selected ? ['lg:scale-125 scale-105 z-50 border-4'] : ['scale-100', 'z-20'])" :style="`background-image: url(${data.preview})`" @click="$emit('projectCardClicked', data)">
+    <div :class="divClass.concat(selected ? ['lg:scale-125 scale-105 border-4'] : ['scale-100'])" :style="`background-image: url(${data.preview})`" @click="$emit('projectCardClicked', data)">
         <div class="font-bold from-zinc-900 to-zinc-800 bg-gradient-to-tr text-white p-2  border-b-2 ">
             {{data.name}}
         </div>
