@@ -90,7 +90,10 @@ import SlideAbout from "@/pages/FrontPage/components/AboutMe/SlideAbout.vue";
 import MyStats from "@/pages/FrontPage/components/Stats/MyStats.vue";
 import { onMounted } from "vue";
 
-const isElementXPercentInViewport = function (el, percentVisible: number) {
+const isElementXPercentInViewport = function (
+  el: HTMLElement,
+  percentVisible: number
+) {
   const rect = el.getBoundingClientRect();
   const windowHeight =
     window.innerHeight || document.documentElement.clientHeight;
@@ -102,7 +105,7 @@ const isElementXPercentInViewport = function (el, percentVisible: number) {
       percentVisible
   );
 };
-const handleUserScrolling = (_) => {
+const handleUserScrolling = () => {
   const elementId = ["blurb", "skills", "aboutMe", "projects"];
   elementId.forEach((id) => {
     const element = document.getElementById(id);
@@ -126,7 +129,6 @@ const handleUserScrolling = (_) => {
 onMounted(() => {
   handleUserScrolling(null);
 });
-
 </script>
 <style>
 #frontpage {
