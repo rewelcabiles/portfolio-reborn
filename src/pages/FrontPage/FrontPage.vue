@@ -127,7 +127,7 @@ const handleUserScrolling = () => {
   });
 };
 onMounted(() => {
-  handleUserScrolling(null);
+  handleUserScrolling();
 });
 </script>
 <style>
