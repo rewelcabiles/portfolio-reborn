@@ -33,7 +33,7 @@ const links = [
   },
   {
     type: "img",
-    link: "https://assets.rewelcabiles.me/portfolio/resume.pdf",
+    link: "https://firebasestorage.googleapis.com/v0/b/portfolio-eb1b3.appspot.com/o/files%2FRewel_Cabiles_Resume_HK.pdf?alt=media&token=7dcb46a8-800d-42b5-9cdc-ebb49b693a16",
     icon: "fa-solid fa-file",
     title: "Resume",
   },
