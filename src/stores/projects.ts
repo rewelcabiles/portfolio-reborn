@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { getDatabase, get, ref as fbref, onValue } from "firebase/database";
+import { getDatabase, ref as fbref, onValue } from "firebase/database";
 import { getAnalytics, logEvent } from "firebase/analytics";
 
 interface Project {
@@ -13,7 +13,7 @@ interface Project {
 }
 
 export const useProjectStore = defineStore("projects", () => {
-  const data = ref([] as any[]);
+  const data = ref([] as unknown[]);
   const dataMap = ref({});
   const selectedProject = ref({} as Project);
 
@@ -22,19 +22,18 @@ export const useProjectStore = defineStore("projects", () => {
 
   const projectsRef = fbref(db, "projects/");
 
-  const mySkills = ref({} as any);
+  const mySkills = ref({});
   const mySkillsRef = fbref(db, "skills/");
 
   onValue(mySkillsRef, (snapshot) => {
     const temp_data = snapshot.val();
     mySkills.value = Object.values(temp_data);
-    console.log(mySkills.value)
   });
 
   onValue(projectsRef, (snapshot) => {
     dataMap.value = snapshot.val();
     data.value = Object.values(dataMap.value).sort(
-      (a: any, b: any) => a.order - b.order
+      (a: unknown, b: unknown) => a.order - b.order
     );
   });
 
