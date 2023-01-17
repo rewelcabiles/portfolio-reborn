@@ -17,6 +17,40 @@ interface Skill {
   title: string;
 }
 
+const sections = {
+  Blurb: {
+    Intro: {
+      name: "Intro",
+      type: "text",
+      value: "profile.intro",
+    },
+    Descriptor: {
+      name: "Descriptor",
+      type: "text",
+      value: "profile.intro",
+    },
+  },
+  About: {
+    Intro: {
+      name: "About Me",
+      type: "textarea",
+      value: "profile.intro",
+    },
+  },
+  Jobs: {
+    Payruler: {
+      name: "PayRuler",
+      type: "textarea",
+      value: "profile.intro",
+    },
+    Raykan: {
+      name: "Raykan",
+      type: "textarea",
+      value: "profile.intro",
+    },
+  },
+};
+
 export const useProjectStore = defineStore("projects", () => {
   const data = ref([] as Project[]);
   const dataMap = ref({} as Record<string, Project>);
@@ -29,6 +63,13 @@ export const useProjectStore = defineStore("projects", () => {
 
   const mySkills = ref({} as Skill[]);
   const mySkillsRef = fbref(db, "skills/");
+
+  const profile = ref(sections as Record<string, object>);
+  const profileRefRef = fbref(db, "Profile/");
+
+  onValue(profileRefRef, (snapshot) => {
+    profile.value = snapshot.val();
+  });
 
   onValue(mySkillsRef, (snapshot) => {
     const temp_data = snapshot.val();
@@ -61,5 +102,7 @@ export const useProjectStore = defineStore("projects", () => {
     setSelected,
     selectedProject,
     mySkills,
+    profile,
+    profileRefRef,
   };
 });

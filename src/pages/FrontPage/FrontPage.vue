@@ -84,7 +84,7 @@
 <script setup lang="ts">
 import NavVue from "@/pages/FrontPage/components/Nav/Nav.vue";
 import FooterVue from "@/pages/FrontPage/components/Footer/footer.vue";
-import SlideProfile from "@/pages/FrontPage/components/Blurb/Blurb.vue";
+import SlideProfile from "@/pages/FrontPage/components/Blurb/BlurbVue.vue";
 import SlideProjects from "@/pages/FrontPage/components/Projects/Projects.vue";
 import SlideAbout from "@/pages/FrontPage/components/AboutMe/SlideAbout.vue";
 import MyStats from "@/pages/FrontPage/components/Stats/MyStats.vue";
@@ -131,7 +131,6 @@ onMounted(() => {
 });
 </script>
 <style>
-
 /* width */
 ::-webkit-scrollbar {
   width: 11px;

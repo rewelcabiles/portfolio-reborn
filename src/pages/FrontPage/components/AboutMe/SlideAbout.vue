@@ -18,27 +18,11 @@
             v-motion
             :initial="{ opacity: 0 }"
             :visible="{ opacity: 1, transition: { duration: 500, delay: 200 } }"
-            class="z-50 text-justify"
+            class="prose prose-invert text-justify"
           >
-            I'm Rewel, I was born in the Philippines, raised in Hong Kong, then
-            moved back to the Philippines around High school. I've always been
-            interested in programming, picking up Python as my first programming
-            language at around the age of 14 and then just exploring what the
-            this hobby had to offer.
-            So far I've made games, built websites, tinkered with servers, and
-            even worked on microcontrollers like the Raspberry PI, Arduino, and
-            so far my favourite, the various ESP boards
-            <br />
-            <br />
-            I studied Computer Science at Adamson University, Philippines, not
-            hesitating on my course, and I spent most of my free time continuing
-            to work on programming not just as a hobby but academically now too.
-            <br />
-            <br />
-            I'm currently working as a Software Engineer at Raykan, a company
-            based in Cebu City, and I'm always looking for new opportunities to
-            work on interesting projects, so feel free to contact me if you have
-            any questions or just want to chat!
+            <span
+              v-html="coverter.makeHtml(projectStore.profile.About.Intro.value)"
+            />
           </div>
         </div>
         <div class="text-zinc-50 w-full md:px-10">
@@ -66,18 +50,17 @@
                 opacity: 1,
                 transition: { duration: 200, delay: 100 * (index + 1) },
               }"
-              v-for="(exp, index) in experiences"
+              v-for="(value, key, index) in projectStore.profile.Jobs"
               :key="index"
               class="bg-zinc-900 rounded-xl shadow-xl p-5"
             >
-              <a :href="exp.link" :target="exp.link == '#' ? '' : '_blank'">
-                <div class="flex flex-row text-zinc-50 mb-1 text-lg font-bold">
-                  {{ exp.name }}
-                </div>
-                <div class="text-justify text-zinc-50 text-md leading-tight p-5">
-                  {{ exp.description }}
-                </div>
-              </a>
+              <div class="flex flex-row text-zinc-50 mb-1 text-lg font-bold">
+                {{ key }}
+              </div>
+              <div
+                class="text-justify prose prose-invert p-4"
+                v-html="coverter.makeHtml(value.value)"
+              />
             </div>
           </div>
         </div>
@@ -86,21 +69,13 @@
   </div>
 </template>
 <script setup lang="ts">
-const experiences = [
-  {
-    name: "Payruler",
-    link: "https://payruler.com/",
-    description:
-      "I was here as an Intern, working as a backend web developer in the R&D department. I built APIs for the projects we worked on there, occasionally helping with infrustructure related tasks like fixing or setting up servers hosted either on-site or in Azure. I learned how to collaborate in a team environment and shared my ideas on how we could improve some of the projects there.",
-  },
-  {
-    name: "Raykan",
-    position: "Front end developer",
-    link: "#",
-    description:
-      "This is a startup company im working with to help build websites and systems for clients. I'm currently working here as both front end developer and Dev Ops. I'm currently working on a project for a client that requires me to build a website and a system to manage the website. I'm currently working on a project for a client that requires me to build a system to manage their business.",
-  },
-];
+import { useProjectStore } from "@/stores/projects";
+import showdown from "showdown";
+import showdownHighlight from "showdown-highlight";
+const coverter = new showdown.Converter({
+  extensions: [showdownHighlight],
+});
+const projectStore = useProjectStore();
 </script>
 <style>
 #SlideAboutMe {
