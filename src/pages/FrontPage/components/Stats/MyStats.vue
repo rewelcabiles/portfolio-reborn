@@ -5,8 +5,10 @@
     :visible="{ opacity: 1, transition: { duration: 550, delay: 100 } }"
     class="w-screen pt-32 pb-72 min-h-screen bg-zinc-50 bg-gradient-to-b from-zinc-50 via-zinc-50 to-zinc-400"
   >
-    <div class="text-center font-bold text-4xl pb-14">What can I do?</div>
-    <div class="flex md:flex-row flex-col space-y-20 md:space-y-0">
+    <div class="text-center font-bold text-4xl pb-14 text-zinc-800">
+      What can I do?
+    </div>
+    <div class="flex flex-wrap sm:space-0 justify-evenly">
       <MyStatsCard v-for="data in projectStore.mySkills" :key="data.title">
         <template v-slot:title>
           {{ data.title }}
