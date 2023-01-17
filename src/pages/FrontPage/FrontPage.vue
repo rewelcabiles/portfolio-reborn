@@ -131,6 +131,27 @@ onMounted(() => {
 });
 </script>
 <style>
+
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-zinc-50;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-500;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-600;
+}
+
 #frontpage {
   min-height: 100vh;
 }
