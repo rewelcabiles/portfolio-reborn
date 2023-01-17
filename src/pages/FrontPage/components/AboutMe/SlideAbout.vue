@@ -48,7 +48,10 @@
               :initial="{ opacity: 0 }"
               :visible="{
                 opacity: 1,
-                transition: { duration: 200, delay: 100 * (index + 1) },
+                transition: {
+                  duration: 200,
+                  delay: 100 * (index ? index : 1 + 1),
+                },
               }"
               v-for="(value, key, index) in projectStore.profile.Jobs"
               :key="index"

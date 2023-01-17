@@ -13,7 +13,7 @@ interface Project {
 }
 
 interface Skill {
-  content: object;
+  content: any;
   title: string;
 }
 
@@ -64,7 +64,7 @@ export const useProjectStore = defineStore("projects", () => {
   const mySkills = ref({} as Skill[]);
   const mySkillsRef = fbref(db, "skills/");
 
-  const profile = ref(sections as Record<string, object>);
+  const profile = ref(sections as Record<string, any>);
   const profileRefRef = fbref(db, "Profile/");
 
   onValue(profileRefRef, (snapshot) => {

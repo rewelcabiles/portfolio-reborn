@@ -28,7 +28,7 @@
           v-for="(value, index) in projectStore.data"
           :key="index"
           :data="value"
-          :selected="value.name === projectStore.selectedProject"
+          :selected="value === projectStore.selectedProject"
           @projectCardClicked="nodeClicked(value)"
         />
       </div>
@@ -80,8 +80,8 @@ import SlideProjectCardsVue from "./ProjectCards.vue";
 import { useProjectStore } from "@/stores/projects";
 const projectStore = useProjectStore();
 
-function nodeClicked(key: string) {
-  projectStore.setSelected(key as string);
+function nodeClicked(key: any) {
+  projectStore.setSelected(key);
   setTimeout(() => {
     const element = document.getElementById("projectDetails");
     if (element) {

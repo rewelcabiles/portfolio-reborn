@@ -8,7 +8,6 @@ import router from "./router";
 import "./assets/index.css";
 import "./assets/main.css";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import showdown from "showdown";
 import "highlight.js/styles/github-dark.css";
@@ -32,10 +31,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const fb = initializeApp(firebaseConfig);
-getAnalytics(fb);
+initializeApp(firebaseConfig);
 
-let app: App;
+let app: any;
 getAuth().onAuthStateChanged(() => {
   if (!app) {
     app = createApp(App);
