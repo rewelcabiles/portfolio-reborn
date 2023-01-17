@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import FrontPage from "@/pages/FrontPage/FrontPage.vue";
-import SignIn from "@/pages/SignIn/SignIn.vue";
 import { getAuth } from "firebase/auth";
-import ProfileEditor from "@/pages/ProfileEditor/ProfileEditor.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,12 +7,12 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: FrontPage,
+      component: () => import("@/pages/FrontPage/FrontPage.vue"),
     },
     {
       path: "/auth/signIn",
       name: "signIn",
-      component: SignIn,
+      component: () => import("@/pages/SignIn/SignIn.vue"),
       meta: {
         requiresAuth: false,
       },
@@ -23,7 +20,7 @@ const router = createRouter({
     {
       path: "/auth/profileEditor",
       name: "profileEditor",
-      component: ProfileEditor,
+      component: () => import("@/pages/ProfileEditor/ProfileEditor.vue"),
       meta: {
         requiresAuth: true,
       },
