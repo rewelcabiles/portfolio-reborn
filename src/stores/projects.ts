@@ -12,6 +12,11 @@ interface Project {
   preview: string;
 }
 
+interface Skill {
+  content: object;
+  title: string;
+}
+
 export const useProjectStore = defineStore("projects", () => {
   const data = ref([] as Project[]);
   const dataMap = ref({} as Record<string, Project>);
@@ -22,7 +27,7 @@ export const useProjectStore = defineStore("projects", () => {
 
   const projectsRef = fbref(db, "projects/");
 
-  const mySkills = ref({});
+  const mySkills = ref({} as Skill[]);
   const mySkillsRef = fbref(db, "skills/");
 
   onValue(mySkillsRef, (snapshot) => {
