@@ -13,8 +13,8 @@ interface Project {
 }
 
 export const useProjectStore = defineStore("projects", () => {
-  const data = ref([] as unknown[]);
-  const dataMap = ref({});
+  const data = ref([] as Project[]);
+  const dataMap = ref({} as Record<string, Project>);
   const selectedProject = ref({} as Project);
 
   const db = getDatabase();
@@ -33,11 +33,11 @@ export const useProjectStore = defineStore("projects", () => {
   onValue(projectsRef, (snapshot) => {
     dataMap.value = snapshot.val();
     data.value = Object.values(dataMap.value).sort(
-      (a: unknown, b: unknown) => a.order - b.order
+      (a: Project, b: Project) => a.order - b.order
     );
   });
 
-  function setSelected(selected: any) {
+  function setSelected(selected: Project) {
     selectedProject.value = selected;
   }
 
